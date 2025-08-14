@@ -1,0 +1,42 @@
+import os
+from PIL import Image
+
+# Folders for input and output
+input_folder = "input_images"
+output_folder = "output_images"
+
+# Create folders if they don't exist
+os.makedirs(input_folder, exist_ok=True)
+os.makedirs(output_folder, exist_ok=True)
+
+# Image size (width, height) - change as you like
+new_width = 800
+new_height = 600
+
+print("📂 Place your images in the 'input_images' folder and run the script again to process them.")
+
+# Loop through files in the input folder
+for filename in os.listdir(input_folder):
+    file_path = os.path.join(input_folder, filename)
+
+    # Skip if it's not a file
+    if not os.path.isfile(file_path):
+        continue
+
+    try:
+        with Image.open(file_path) as img:
+            # Resize the image
+            resized_img = img.resize((new_width, new_height))
+
+            # Change format to PNG
+            base_name = os.path.splitext(filename)[0]
+            output_path = os.path.join(output_folder, f"{base_name}.png")
+
+            # Save resized image
+            resized_img.save(output_path, "PNG")
+            print(f"✅ Processed: {filename} → {output_path}")
+
+    except Exception as e:
+        print(f"⚠️ Skipping {filename}: {e}")
+
+print("🎯 Done! Check the 'output_images' folder for resized images.")
