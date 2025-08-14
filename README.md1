@@ -1,0 +1,38 @@
+# 🖼️ Image Resizer & Converter Tool
+
+A simple Python script to **batch resize** or **enlarge** images and convert them to **PNG** format.  
+Built with **Python** and **Pillow**.
+
+---
+
+## 📌 Features
+- Resize **or enlarge** images in bulk
+- Automatically creates `input_images` and `output_images` folders
+- Converts all images to **PNG**
+- Handles errors gracefully (skips non-image files)
+- Works in **Python IDLE**, Wing IDE, or any terminal
+
+---
+
+## 📂 Folder Structure
+│
+├── image_resizer.py # Main Python script
+├── input_images/ # Place your input images here
+├── output_images/ # Processed images will be saved here
+└── README.md # Project documentation
+
+## ⚙️ Requirements
+
+### 1. Install Python  
+Download and install **Python 3.x** from:  
+[https://www.python.org/downloads/](https://www.python.org/downloads/)  
+Make sure to check **"Add Python to PATH"** during installation.
+
+### 2. Install Pillow  
+Pillow is the Python library used for image processing.
+
+#### 💻 Windows  
+Open **Command Prompt** and run:  
+```bash
+pip install pillow
+
